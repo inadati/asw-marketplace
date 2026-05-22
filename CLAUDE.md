@@ -25,8 +25,6 @@ asw-marketplace/
 │   │       │       └── template.yml
 │   │       ├── plan-review/
 │   │       │   └── SKILL.md       ← ExitPlanMode 後に AUTO-TRIGGER されるレビュースキル
-│   │       ├── easy-evaluation/
-│   │       │   └── SKILL.md       ← 提案を複数評価者に批評させるスキル
 │   │       └── intent-check/
 │   │           └── SKILL.md       ← AI の意図推論とユーザーの思惑の齟齬を確認するスキル
 │   └── crucible-harness/
@@ -47,7 +45,6 @@ asw-marketplace/
 |--------|---------|------|
 | `wantree` | `/asw-utils:wantree` | ヒアリング形式で要件定義YAML（wantree.yml）を作成・管理 |
 | `plan-review` | AUTO-TRIGGER のみ | `ExitPlanMode` 後に自動起動。プランを最小決定事項に分解して1件ずつ確認 |
-| `easy-evaluation` | `/asw-utils:easy-evaluation` | 提案を複数評価者（サブエージェント）に並列で批評させる |
 | `intent-check` | `/asw-utils:intent-check` | 素材（画像・テキスト等）からAIが推論した意図とユーザーの思惑を1件ずつ照合 |
 | `crucible-harness` | `/crucible-harness` | Phase 0: タスク定義・チェックリスト・パラメータのセットアップ |
 | `crucible-harness:run` | `/crucible-harness:run` | Phase 1-5: 固定チェックリスト×悪魔の代理人×Self-Reflection×Memoryの品質改善ループ |
@@ -79,6 +76,10 @@ SKILL.md frontmatter・marketplace.json・plugin.json の3ファイルを必ず�
 - リポジトリ名を `i-harness` → `asw-utils` に変更
 - `i-harness` スキルを廃止。`wantree` と `plan-review` のみに整理
 - プラグイン名を `i-harness` → `asw-utils` に変更
+
+### 2026-05-22（v0.5.4）
+
+- `easy-evaluation` スキルを廃止（chot-harnessで代替）
 
 ### 2026-05-04（v0.7.0）
 
